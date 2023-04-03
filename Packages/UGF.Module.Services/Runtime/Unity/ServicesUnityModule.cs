@@ -1,5 +1,6 @@
 ﻿using System.Threading.Tasks;
 using UGF.Application.Runtime;
+using UGF.Logs.Runtime;
 using Unity.Services.Core;
 using Unity.Services.Core.Environments;
 
@@ -20,6 +21,11 @@ namespace UGF.Module.Services.Runtime.Unity
             if (Description.HasEnvironmentName)
             {
                 options.SetEnvironmentName(Description.EnvironmentName);
+
+                Log.Debug("Services Unity setup environment", new
+                {
+                    Description.EnvironmentName
+                });
             }
 
             ConfiguringOptions?.Invoke(options);
