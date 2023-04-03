@@ -18,5 +18,8 @@
   "publishConfig": {
     "registry": "https://unitygameframework.jfrog.io/artifactory/api/npm/default"
   },
-  "dependencies": {}
+  "dependencies": {
+    "com.ugf.application": "8.4.0",
+    "com.unity.services.core": "1.8.1"
+  }
 }
