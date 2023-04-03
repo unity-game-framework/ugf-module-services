@@ -1,6 +1,7 @@
 ﻿using System.Threading.Tasks;
 using UGF.Application.Runtime;
 using UGF.Initialize.Runtime;
+using UGF.Logs.Runtime;
 using UGF.Module.Services.Runtime.Unity;
 
 namespace UGF.Module.Services.Runtime
@@ -29,12 +30,16 @@ namespace UGF.Module.Services.Runtime
         {
             m_state = m_state.Initialize();
 
+            Log.Debug("Services enabled.");
+
             return OnEnableAsync();
         }
 
         public Task DisableAsync()
         {
             m_state = m_state.Uninitialize();
+
+            Log.Debug("Services disabled.");
 
             return OnDisableAsync();
         }
