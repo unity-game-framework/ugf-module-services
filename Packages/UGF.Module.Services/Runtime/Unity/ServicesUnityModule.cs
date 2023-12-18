@@ -14,7 +14,7 @@ namespace UGF.Module.Services.Runtime.Unity
         {
         }
 
-        protected override async Task OnEnableAsync()
+        protected override Task OnEnableAsync()
         {
             var options = new InitializationOptions();
 
@@ -30,7 +30,7 @@ namespace UGF.Module.Services.Runtime.Unity
 
             ConfiguringOptions?.Invoke(options);
 
-            await UnityServices.InitializeAsync(options);
+            return UnityServices.InitializeAsync(options);
         }
 
         protected override Task OnDisableAsync()

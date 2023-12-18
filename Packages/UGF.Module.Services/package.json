@@ -2,7 +2,7 @@
   "name": "com.ugf.module.services",
   "displayName": "UGF.Module.Services",
   "version": "1.0.0-preview.1",
-  "unity": "2022.2",
+  "unity": "2023.2",
   "apiCompatibility": ".NET Standard 2.1",
   "description": "Module to manager Unity Game Services.",
   "author": {
@@ -16,10 +16,10 @@
   "changelogUrl": "https://github.com/unity-game-framework/ugf-module-services/blob/main/changelog.md",
   "licensesUrl": "https://github.com/unity-game-framework/ugf-module-services/blob/main/license",
   "publishConfig": {
-    "registry": "https://unitygameframework.jfrog.io/artifactory/api/npm/default"
+    "registry": "https://api.upmhub.org/registries/unity-game-framework"
   },
   "dependencies": {
-    "com.ugf.application": "8.4.0",
-    "com.unity.services.core": "1.8.1"
+    "com.ugf.application": "8.5.0",
+    "com.unity.services.core": "1.12.1"
   }
 }
