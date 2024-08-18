@@ -9,7 +9,7 @@ namespace UGF.Module.Services.Runtime.Unity
 
         private readonly string m_environmentName;
 
-        public ServicesUnityModuleDescription(Type registerType, bool enableOnInitializeAsync, string environmentName) : base(registerType, enableOnInitializeAsync)
+        public ServicesUnityModuleDescription(bool enableOnInitializeAsync, string environmentName) : base(enableOnInitializeAsync)
         {
             m_environmentName = environmentName;
         }

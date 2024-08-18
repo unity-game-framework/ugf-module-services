@@ -10,10 +10,13 @@ namespace UGF.Module.Services.Runtime
     {
         public bool IsEnabled { get { return m_state; } }
 
+        protected ILog Logger { get; }
+
         private InitializeState m_state;
 
         protected ServicesModule(TDescription description, IApplication application) : base(description, application)
         {
+            Logger = Log.CreateWithLabel(GetType().Name);
         }
 
         protected override async Task OnInitializeAsync()
@@ -30,7 +33,7 @@ namespace UGF.Module.Services.Runtime
         {
             m_state = m_state.Initialize();
 
-            Log.Debug("Services enabled.");
+            Logger.Debug("Services enabled.");
 
             return OnEnableAsync();
         }
@@ -39,7 +42,7 @@ namespace UGF.Module.Services.Runtime
         {
             m_state = m_state.Uninitialize();
 
-            Log.Debug("Services disabled.");
+            Logger.Debug("Services disabled.");
 
             return OnDisableAsync();
         }
