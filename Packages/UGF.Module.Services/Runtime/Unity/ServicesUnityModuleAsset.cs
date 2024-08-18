@@ -12,11 +12,9 @@ namespace UGF.Module.Services.Runtime.Unity
         public bool EnableOnInitializeAsync { get { return m_enableOnInitializeAsync; } set { m_enableOnInitializeAsync = value; } }
         public string EnvironmentName { get { return m_environmentName; } set { m_environmentName = value; } }
 
-        protected override IApplicationModuleDescription OnBuildDescription()
+        protected override ServicesUnityModuleDescription OnBuildDescription()
         {
-            return new ServicesUnityModuleDescription(
-                typeof(IServicesModule),
-                m_enableOnInitializeAsync,
+            return new ServicesUnityModuleDescription(m_enableOnInitializeAsync,
                 m_environmentName
             );
         }

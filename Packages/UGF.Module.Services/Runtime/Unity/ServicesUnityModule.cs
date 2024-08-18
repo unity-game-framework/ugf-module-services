@@ -14,7 +14,7 @@ namespace UGF.Module.Services.Runtime.Unity
         {
         }
 
-        protected override Task OnEnableAsync()
+        protected override async Task OnEnableAsync()
         {
             var options = new InitializationOptions();
 
@@ -22,7 +22,7 @@ namespace UGF.Module.Services.Runtime.Unity
             {
                 options.SetEnvironmentName(Description.EnvironmentName);
 
-                Log.Debug("Services Unity setup environment", new
+                Logger.Debug("Services Unity setup environment", new
                 {
                     Description.EnvironmentName
                 });
@@ -30,7 +30,7 @@ namespace UGF.Module.Services.Runtime.Unity
 
             ConfiguringOptions?.Invoke(options);
 
-            return UnityServices.InitializeAsync(options);
+            await UnityServices.InitializeAsync(options);
         }
 
         protected override Task OnDisableAsync()
